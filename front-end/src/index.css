@@ -19,7 +19,7 @@
 
     a {
         @apply no-underline;
-        color: var(--color-text-default);
+        color: var(--color-default);
     }
 
     button,
@@ -30,10 +30,15 @@
     body {
         @apply text-base;
         font-family: var(--font-family-default), serif;
-        color: var(--color-text-default);
+        color: var(--color-default);
     }
 
     #root {
         @apply min-h-screen flex flex-col items-center;
     }
+}
+
+@theme {
+    --color-default: var(--color-default);
+    --color-theme-main: var(--color-theme-main);
 }
