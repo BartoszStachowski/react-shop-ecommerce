@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    h1 {
+        @apply text-3xl font-bold;
+    }
+
+    h2 {
+        @apply text-2xl font-bold;
+    }
+
+    h3 {
+        @apply text-xl;
+    }
+
+    a {
+        @apply no-underline;
+        color: var(--color-text-default);
+    }
+
+    button,
+    a {
+        cursor: pointer;
+    }
+
+    body {
+        @apply text-base;
+        font-family: var(--font-family-default), serif;
+        color: var(--color-text-default);
+    }
+
+    #root {
+        @apply min-h-screen flex flex-col items-center;
+    }
+}
