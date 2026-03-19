@@ -1,3 +1,3 @@
 export const Logo = () => {
-    return <h1 className="uppercase">BestShop</h1>;
+    return <h1 className="text-center uppercase">BestShop</h1>;
 };
