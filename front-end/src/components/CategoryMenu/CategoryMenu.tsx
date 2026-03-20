@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 export const CategoryMenu = () => {
     return (
-        <div className="w-full bg-green-800">
+        <div className="bg-theme-main w-full">
             <ul className="mx-auto my-0 flex w-full max-w-400 gap-4 p-4">
                 {CATEGORIES.map((category) => (
                     <li key={category.categoryName}>
