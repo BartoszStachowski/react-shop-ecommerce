@@ -2,7 +2,7 @@ import { Layout } from '@/components/Layout/Layout.tsx';
 import { Hero } from '@/components/Hero/Hero.tsx';
 import COVER_PHOTO from '@/assets/cover.webp';
 import type { ProductType } from '@/types/product.ts';
-import { Bestsellers } from '@/components/Bestsellers/Bestsellers.tsx';
+import { Products } from '@/components/Products/Products.tsx';
 
 export const MainPage = () => {
     const products: ProductType[] = [
@@ -86,7 +86,7 @@ export const MainPage = () => {
     return (
         <Layout>
             <Hero heroImage={COVER_PHOTO} />
-            <Bestsellers products={products} />
+            <Products products={products} headerText="Explore Popular Picks" />
         </Layout>
     );
 };
