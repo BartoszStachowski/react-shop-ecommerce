@@ -1,4 +1,3 @@
-import { Layout } from '@/components/Layout/Layout.tsx';
 import { FavouriteList } from '@/components/FavouriteList/FavouriteList.tsx';
 import type { ProductType } from '@/types/product.ts';
 
@@ -43,9 +42,5 @@ export const Favourites = () => {
                 'Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu',
         },
     ];
-    return (
-        <Layout>
-            <FavouriteList products={favouriteProducts} />
-        </Layout>
-    );
+    return <FavouriteList products={favouriteProducts} />;
 };

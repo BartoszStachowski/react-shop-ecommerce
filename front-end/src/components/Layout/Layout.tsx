@@ -6,9 +6,9 @@ import { IconMenu } from '@/components/IconMenu/IconMenu.tsx';
 import { TopBar } from '@/components/TopBar/TopBar.tsx';
 import { CategoryMenu } from '@/components/CategoryMenu/CategoryMenu.tsx';
 import { MainContent } from '@/components/MainContent/MainContent.tsx';
-import type { ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
 
-export const Layout = ({ children }: { children: ReactNode }) => {
+export const Layout = () => {
     return (
         <>
             <MainContent>
@@ -21,7 +21,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
                     </div>
                 </TopBar>
                 <CategoryMenu />
-                {children}
+                <Outlet />
             </MainContent>
             <Footer />
         </>

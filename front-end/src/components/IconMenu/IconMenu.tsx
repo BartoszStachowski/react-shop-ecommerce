@@ -7,7 +7,7 @@ export const IconMenu = () => {
     return (
         <ul className="flex gap-4 p-4">
             <li>
-                <Link to="/favorites">
+                <Link to="/favourites">
                     <img src={HEART_ICON} alt="heart icon" />
                 </Link>
             </li>

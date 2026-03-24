@@ -1,4 +1,3 @@
-import { Layout } from '@/components/Layout/Layout.tsx';
 import { CartProductList } from '@/components/CartProductList/CartProductList.tsx';
 import type { ProductType } from '@/types/product.ts';
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer.tsx';
@@ -46,11 +45,9 @@ export const Cart = () => {
         },
     ];
     return (
-        <Layout>
-            <FlexContainer>
-                <CartProductList products={cartProducts} />
-                <CartSummary products={cartProducts} />
-            </FlexContainer>
-        </Layout>
+        <FlexContainer>
+            <CartProductList products={cartProducts} />
+            <CartSummary products={cartProducts} />
+        </FlexContainer>
     );
 };
