@@ -8,7 +8,7 @@ export const MainMenu = () => {
             {GENDERS.map((category) => (
                 <li key={category.path}>
                     <NavLink
-                        to={`/category/${category.path}`}
+                        to={`/${category.path}`}
                         className={({ isActive }) =>
                             clsx(
                                 'block border-b-4 py-4 font-bold uppercase',

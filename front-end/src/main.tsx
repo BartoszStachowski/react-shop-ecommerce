@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Favourites } from '@/views/Favourites/Favourites.tsx';
 import { Cart } from '@/views/Cart/Cart.tsx';
 import { Layout } from '@/components/Layout/Layout.tsx';
+import { MainPage } from '@/views/MainPage/MainPage.tsx';
+import { mainPageLoader } from '@/api/mainPageLoader.ts';
 
 const router = createBrowserRouter([
     {
@@ -19,6 +21,11 @@ const router = createBrowserRouter([
             {
                 path: '/favourites',
                 element: <Favourites />,
+            },
+            {
+                path: '/:gender?',
+                element: <MainPage />,
+                loader: mainPageLoader,
             },
         ],
     },

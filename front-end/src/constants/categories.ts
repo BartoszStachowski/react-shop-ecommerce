@@ -1,7 +1,7 @@
 export const GENDERS = [
     { categoryName: 'Women', path: 'women' },
     { categoryName: 'Men', path: 'men' },
-    { categoryName: 'Kids', path: 'kids' },
+    { categoryName: 'Children', path: 'children' },
 ];
 
 export const CATEGORIES = [
