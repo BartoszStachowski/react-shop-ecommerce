@@ -8,6 +8,8 @@ import { Cart } from '@/views/Cart/Cart.tsx';
 import { Layout } from '@/components/Layout/Layout.tsx';
 import { MainPage } from '@/views/MainPage/MainPage.tsx';
 import { mainPageLoader } from '@/api/mainPageLoader.ts';
+import { ProductList } from '@/views/ProductList/ProductList.tsx';
+import { productListLoader } from '@/api/productListLoader.ts';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +28,11 @@ const router = createBrowserRouter([
                 path: '/:gender?',
                 element: <MainPage />,
                 loader: mainPageLoader,
+            },
+            {
+                path: '/:gender/:category/:subcategory?',
+                element: <ProductList />,
+                loader: productListLoader,
             },
         ],
     },

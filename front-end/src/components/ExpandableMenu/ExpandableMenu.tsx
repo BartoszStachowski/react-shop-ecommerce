@@ -1,20 +1,40 @@
 import { CATEGORIES } from '@/constants/categories.ts';
 import ARROW_ICON from '@/assets/arrow.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
+const PATH_TO_GENDER_NAME = {
+    men: 'Men',
+    women: 'Women',
+    children: 'Children',
+};
+
 export const ExpandableMenu = () => {
-    const activePath = 'clothing';
+    const params = useParams<{
+        gender: string;
+        category: string;
+    }>();
+    const activePath = params.category;
+
     return (
         <div className="mt-4 w-44 pl-4">
-            <p className="mb-4 font-bold">Women</p>
+            <p className="mb-4 font-bold">
+                {params.gender &&
+                    PATH_TO_GENDER_NAME[
+                        params.gender as keyof typeof PATH_TO_GENDER_NAME
+                    ]}
+            </p>
             <ul>
                 {CATEGORIES.map((category) => {
                     return (
                         <li key={category.path} className="mb-2">
                             <NavLink
-                                to={category.path}
-                                className="flex items-center justify-between"
+                                to={`/${params.gender}/${category.path}`}
+                                className={({ isActive }) =>
+                                    clsx('flex items-center justify-between', {
+                                        'font-bold': isActive,
+                                    })
+                                }
                             >
                                 {category.categoryName}
                                 <img
@@ -32,7 +52,7 @@ export const ExpandableMenu = () => {
                                         (subcategory) => (
                                             <li className="mb-2">
                                                 <NavLink
-                                                    to={subcategory.path}
+                                                    to={`/${params.gender}/${params.category}/${subcategory.path}`}
                                                     className={({ isActive }) =>
                                                         clsx({
                                                             'font-bold':

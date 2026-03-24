@@ -1,7 +1,7 @@
 export interface ProductType {
     id: number;
     gender: 'men' | 'women' | 'children';
-    category: string;
+    category: 'clothing' | 'shoes' | 'accessories' | 'sport';
     subcategory: string;
     productName: string;
     brand: string;
