@@ -1,7 +1,7 @@
-import { CartProductList } from '@/components/CartProductList/CartProductList.tsx';
+import { CartProductList } from '@/components/cart/CartProductList/CartProductList.tsx';
 import type { ProductType } from '@/types/product.ts';
-import { FlexContainer } from '@/components/FlexContainer/FlexContainer.tsx';
-import { CartSummary } from '@/components/CartSummary/CartSummary.tsx';
+import { FlexContainer } from '@/components/ui/FlexContainer/FlexContainer.tsx';
+import { CartSummary } from '@/components/cart/CartSummary/CartSummary.tsx';
 
 export const Cart = () => {
     const cartProducts: ProductType[] = [

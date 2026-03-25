@@ -1,5 +1,5 @@
 import type { ProductType } from '@/types/product.ts';
-import { CenteredContent } from '@/components/CenteredContent/CenteredComponent.tsx';
+import { CenteredContent } from '@/components/ui/CenteredContent/CenteredComponent.tsx';
 import { Product } from '@/Product/Product.tsx';
 
 interface ProductsProps {

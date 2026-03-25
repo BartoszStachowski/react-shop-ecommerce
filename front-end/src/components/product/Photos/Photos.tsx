@@ -1,5 +1,5 @@
 import type { ProductType } from '@/types/product.ts';
-import { FlexContainer } from '@/components/FlexContainer/FlexContainer.tsx';
+import { FlexContainer } from '@/components/ui/FlexContainer/FlexContainer.tsx';
 import { useState } from 'react';
 import clsx from 'clsx';
 

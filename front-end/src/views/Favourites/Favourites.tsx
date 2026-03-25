@@ -1,4 +1,4 @@
-import { FavouriteList } from '@/components/FavouriteList/FavouriteList.tsx';
+import { FavouriteList } from '@/components/favourites/FavouriteList/FavouriteList.tsx';
 import type { ProductType } from '@/types/product.ts';
 
 export const Favourites = () => {

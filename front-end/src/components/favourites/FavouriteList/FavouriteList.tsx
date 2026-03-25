@@ -1,6 +1,6 @@
-import { CenteredContent } from '@/components/CenteredContent/CenteredComponent.tsx';
+import { CenteredContent } from '@/components/ui/CenteredContent/CenteredComponent.tsx';
 import type { ProductType } from '@/types/product.ts';
-import { FavouriteProduct } from '@/components/FavouriteProduct/FavouriteProduct.tsx';
+import { FavouriteProduct } from '@/components/favourites/FavouriteProduct/FavouriteProduct.tsx';
 
 export const FavouriteList = ({ products }: { products: ProductType[] }) => {
     return (

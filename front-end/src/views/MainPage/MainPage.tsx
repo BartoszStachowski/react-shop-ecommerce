@@ -1,6 +1,6 @@
 import type { ProductType } from '@/types/product';
-import { Hero } from '@/components/Hero/Hero.tsx';
-import { Products } from '@/components/Products/Products.tsx';
+import { Hero } from '@/components/sections/Hero/Hero.tsx';
+import { Products } from '@/components/product/Products/Products.tsx';
 import { useLoaderData } from 'react-router-dom';
 
 type MainPageLoaderData = {

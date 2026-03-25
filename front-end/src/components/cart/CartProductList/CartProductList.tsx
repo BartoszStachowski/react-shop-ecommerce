@@ -1,6 +1,6 @@
 import type { ProductType } from '@/types/product.ts';
-import { CenteredContent } from '@/components/CenteredContent/CenteredComponent.tsx';
-import { CartProduct } from '@/components/CartProduct/CartProduct.tsx';
+import { CenteredContent } from '@/components/ui/CenteredContent/CenteredComponent.tsx';
+import { CartProduct } from '@/components/cart/CartProduct/CartProduct.tsx';
 
 export const CartProductList = ({ products }: { products: ProductType[] }) => {
     return (

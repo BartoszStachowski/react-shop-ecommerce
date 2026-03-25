@@ -1,10 +1,10 @@
-import { Layout } from '@/components/Layout/Layout.tsx';
-import { FlexContainer } from '@/components/FlexContainer/FlexContainer.tsx';
-import { ExpandableMenu } from '@/components/ExpandableMenu/ExpandableMenu.tsx';
-import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
-import { Photos } from '@/components/Photos/Photos.tsx';
+import { Layout } from '@/components/layout/Layout/Layout.tsx';
+import { FlexContainer } from '@/components/ui/FlexContainer/FlexContainer.tsx';
+import { ExpandableMenu } from '@/components/navigation/ExpandableMenu/ExpandableMenu.tsx';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs/Breadcrumbs.tsx';
+import { Photos } from '@/components/product/Photos/Photos.tsx';
 import type { ProductType } from '@/types/product.ts';
-import { Details } from '@/components/Details/Details.tsx';
+import { ProductDetails } from '@/components/product/ProductDetails/ProductDetails.tsx';
 
 export const ProductDetails = () => {
     const product: ProductType = {
@@ -35,7 +35,7 @@ export const ProductDetails = () => {
                     <Breadcrumbs />
                     <FlexContainer>
                         <Photos product={product} />
-                        <Details product={product} />
+                        <ProductDetails product={product} />
                     </FlexContainer>
                 </div>
             </FlexContainer>

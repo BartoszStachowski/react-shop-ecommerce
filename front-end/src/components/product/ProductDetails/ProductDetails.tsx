@@ -1,10 +1,10 @@
 import CAR_ICON from '@/assets/car.svg';
 import RETURN_ICON from '@/assets/return.svg';
 import type { ProductType } from '@/types/product.ts';
-import { FullWidthButton } from '@/components/FullWidthButton/FullWidthButton.tsx';
-import { Accordion } from '@/components/Accordion/Accordion.tsx';
+import { FullWidthButton } from '@/components/ui/FullWidthButton/FullWidthButton.tsx';
+import { Accordion } from '@/components/ui/Accordion/Accordion.tsx';
 
-export const Details = ({ product }: { product: ProductType }) => {
+export const ProductDetails = ({ product }: { product: ProductType }) => {
     const accordionContent = [
         {
             title: 'Product Description',

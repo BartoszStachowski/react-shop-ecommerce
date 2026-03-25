@@ -1,5 +1,5 @@
-import { CenteredContent } from '@/components/CenteredContent/CenteredComponent.tsx';
-import { FullWidthButton } from '@/components/FullWidthButton/FullWidthButton.tsx';
+import { CenteredContent } from '@/components/ui/CenteredContent/CenteredComponent.tsx';
+import { FullWidthButton } from '@/components/ui/FullWidthButton/FullWidthButton.tsx';
 
 export const Hero = ({ heroImage }: { heroImage: string }) => {
     return (

@@ -1,9 +1,9 @@
-import { FlexContainer } from '@/components/FlexContainer/FlexContainer.tsx';
-import { ExpandableMenu } from '@/components/ExpandableMenu/ExpandableMenu.tsx';
-import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
-import { Products } from '@/components/Products/Products.tsx';
+import { FlexContainer } from '@/components/ui/FlexContainer/FlexContainer.tsx';
+import { ExpandableMenu } from '@/components/navigation/ExpandableMenu/ExpandableMenu.tsx';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs/Breadcrumbs.tsx';
+import { Products } from '@/components/product/Products/Products.tsx';
 import type { ProductType } from '@/types/product.ts';
-import { Pagination } from '@/components/Pagination/Pagination.tsx';
+import { Pagination } from '@/components/ui/Pagination/Pagination.tsx';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { CATEGORIES } from '@/constants/categories.ts';
 

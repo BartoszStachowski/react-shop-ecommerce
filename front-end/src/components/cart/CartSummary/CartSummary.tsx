@@ -1,6 +1,6 @@
 import type { ProductType } from '@/types/product.ts';
 import CAR_ICON from '@/assets/car.svg';
-import { FullWidthButton } from '@/components/FullWidthButton/FullWidthButton.tsx';
+import { FullWidthButton } from '@/components/ui/FullWidthButton/FullWidthButton.tsx';
 
 export const CartSummary = ({ products }: { products: ProductType[] }) => {
     const deliverCost = 49;

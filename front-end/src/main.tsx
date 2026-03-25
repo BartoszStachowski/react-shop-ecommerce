@@ -5,7 +5,7 @@ import '@/styles/theme.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Favourites } from '@/views/Favourites/Favourites.tsx';
 import { Cart } from '@/views/Cart/Cart.tsx';
-import { Layout } from '@/components/Layout/Layout.tsx';
+import { Layout } from '@/components/layout/Layout/Layout.tsx';
 import { MainPage } from '@/views/MainPage/MainPage.tsx';
 import { mainPageLoader } from '@/api/mainPageLoader.ts';
 import { ProductList } from '@/views/ProductList/ProductList.tsx';

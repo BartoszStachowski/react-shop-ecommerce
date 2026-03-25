@@ -1,4 +1,4 @@
-import { Layout } from './components/Layout/Layout.tsx';
+import { Layout } from '@/components/layout/Layout/Layout.tsx';
 
 function App() {
     return <Layout />;
