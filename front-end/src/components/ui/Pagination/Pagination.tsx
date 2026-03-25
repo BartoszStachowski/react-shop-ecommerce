@@ -11,7 +11,10 @@ export const Pagination = ({ numberOfPages }: PaginationProps) => {
         <ul className="my-8 flex items-center justify-center gap-4">
             {pages.map((_page, index) => (
                 <li key={index}>
-                    <NavLink to="/" className="cursor-pointer">
+                    <NavLink
+                        to={`?page=${index + 1}`}
+                        className="cursor-pointer"
+                    >
                         {index + 1}
                     </NavLink>
                 </li>

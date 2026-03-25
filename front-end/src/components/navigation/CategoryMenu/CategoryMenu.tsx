@@ -4,7 +4,6 @@ import clsx from 'clsx';
 
 export const CategoryMenu = () => {
     const params = useParams();
-    console.log(params);
 
     return (
         <div className="bg-theme-main w-full">

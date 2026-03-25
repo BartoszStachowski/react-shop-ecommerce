@@ -2,13 +2,19 @@ import { FlexContainer } from '@/components/ui/FlexContainer/FlexContainer.tsx';
 import { ExpandableMenu } from '@/components/navigation/ExpandableMenu/ExpandableMenu.tsx';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs/Breadcrumbs.tsx';
 import { Products } from '@/components/product/Products/Products.tsx';
-import type { ProductType } from '@/types/product.ts';
 import { Pagination } from '@/components/ui/Pagination/Pagination.tsx';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { CATEGORIES } from '@/constants/categories.ts';
+import type { ProductType } from '@/types/product.ts';
+
+type ProductListLoaderData = {
+    products: ProductType[];
+    numberOfPages: number;
+};
 
 export const ProductList = () => {
-    const products: ProductType[] = useLoaderData();
+    const { products, numberOfPages } = useLoaderData<ProductListLoaderData>();
+
     const params = useParams();
     const foundCategory = CATEGORIES.find((c) => c.path === params.category);
     let foundSubcategory;
@@ -34,7 +40,7 @@ export const ProductList = () => {
                             : foundCategory.categoryName
                     }
                 />
-                <Pagination numberOfPages={5} />
+                <Pagination numberOfPages={numberOfPages} />
             </div>
         </FlexContainer>
     );
