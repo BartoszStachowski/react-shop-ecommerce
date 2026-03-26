@@ -11,3 +11,9 @@ export interface ProductType {
     description: string;
     maintenanceInfo: string;
 }
+
+export interface FavouriteProductType {
+    id: number;
+    product: ProductType;
+    productId: number;
+}

@@ -1,15 +1,22 @@
 import { CenteredContent } from '@/components/ui/CenteredContent/CenteredComponent.tsx';
-import type { ProductType } from '@/types/product.ts';
+import type { FavouriteProductType } from '@/types/product.ts';
 import { FavouriteProduct } from '@/components/favourites/FavouriteProduct/FavouriteProduct.tsx';
 
-export const FavouriteList = ({ products }: { products: ProductType[] }) => {
+interface Props {
+    favourites: FavouriteProductType[];
+}
+
+export const FavouriteList = ({ favourites }: Props) => {
     return (
         <CenteredContent>
             <div className="mt-4 bg-gray-200 p-4">
                 <h2>Favourites</h2>
                 <div>
-                    {products.map((product) => (
-                        <FavouriteProduct key={product.id} product={product} />
+                    {favourites.map((favourite) => (
+                        <FavouriteProduct
+                            key={favourite.id}
+                            favourite={favourite}
+                        />
                     ))}
                 </div>
             </div>

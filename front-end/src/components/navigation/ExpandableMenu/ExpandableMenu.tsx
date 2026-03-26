@@ -50,7 +50,10 @@ export const ExpandableMenu = () => {
                                 <ul className="mt-2 pl-8">
                                     {category.subcategories.map(
                                         (subcategory) => (
-                                            <li className="mb-2">
+                                            <li
+                                                className="mb-2"
+                                                key={subcategory.path}
+                                            >
                                                 <NavLink
                                                     to={`/${params.gender}/${params.category}/${subcategory.path}`}
                                                     className={({ isActive }) =>

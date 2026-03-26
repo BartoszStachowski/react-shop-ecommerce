@@ -14,8 +14,19 @@ import { ProductDetails } from '@/views/ProductDetails/ProductDetails.tsx';
 import { mainPageLoader } from '@/api/mainPageLoader.ts';
 import { productListLoader } from '@/api/productListLoader.ts';
 import { productLoader } from '@/api/productLoader.ts';
+import { addProductToFavouritesAction } from '@/api/addProductToFavouritesAction.ts';
+import { favouritesLoader } from '@/api/favouritesLoader.ts';
+import { deleteFavouriteAction } from '@/api/deleteFavouriteAction.ts';
 
 const router = createBrowserRouter([
+    {
+        path: '/add-to-favourites/:productId',
+        action: addProductToFavouritesAction,
+    },
+    {
+        path: '/delete-form-favourites/:favouriteId',
+        action: deleteFavouriteAction,
+    },
     {
         path: '',
         element: <Layout />,
@@ -27,6 +38,7 @@ const router = createBrowserRouter([
             {
                 path: '/favourites',
                 element: <Favourites />,
+                loader: favouritesLoader,
             },
             {
                 path: '/:gender?',

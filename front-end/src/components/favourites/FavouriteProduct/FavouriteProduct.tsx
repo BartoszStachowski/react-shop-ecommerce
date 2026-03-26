@@ -1,8 +1,16 @@
-import type { ProductType } from '@/types/product.ts';
 import REMOVE_ICON from '@/assets/remove.svg';
 import BAG_ICON from '@/assets/bag.svg';
+import type { FavouriteProductType } from '@/types/product.ts';
+import { useFetcher } from 'react-router-dom';
 
-export const FavouriteProduct = ({ product }: { product: ProductType }) => {
+type Props = {
+    favourite: FavouriteProductType;
+};
+
+export const FavouriteProduct = ({ favourite }: Props) => {
+    const product = favourite.product;
+    const { Form } = useFetcher();
+
     return (
         <div className="my-2 flex gap-12 border-t py-4">
             <img
@@ -20,14 +28,19 @@ export const FavouriteProduct = ({ product }: { product: ProductType }) => {
                     {product.pricePLN}zł
                 </p>
                 <div className="flex flex-1 items-end gap-8">
-                    <button className="flex items-center">
-                        <img
-                            src={REMOVE_ICON}
-                            alt="remove icon"
-                            className="mr-2 h-4 w-4"
-                        />
-                        Usuń
-                    </button>
+                    <Form
+                        action={`/delete-form-favourites/${favourite.id}`}
+                        method="DELETE"
+                    >
+                        <button className="flex items-center">
+                            <img
+                                src={REMOVE_ICON}
+                                alt="remove icon"
+                                className="mr-2 h-4 w-4"
+                            />
+                            Usuń
+                        </button>
+                    </Form>
                     <button className="flex items-center">
                         <img
                             src={BAG_ICON}
