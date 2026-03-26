@@ -4,12 +4,16 @@ import './index.css';
 import '@/styles/theme.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Favourites } from '@/views/Favourites/Favourites.tsx';
-import { Cart } from '@/views/Cart/Cart.tsx';
 import { Layout } from '@/components/layout/Layout/Layout.tsx';
+// views
+import { Cart } from '@/views/Cart/Cart.tsx';
 import { MainPage } from '@/views/MainPage/MainPage.tsx';
-import { mainPageLoader } from '@/api/mainPageLoader.ts';
 import { ProductList } from '@/views/ProductList/ProductList.tsx';
+import { ProductDetails } from '@/views/ProductDetails/ProductDetails.tsx';
+// loaders
+import { mainPageLoader } from '@/api/mainPageLoader.ts';
 import { productListLoader } from '@/api/productListLoader.ts';
+import { productLoader } from '@/api/productLoader.ts';
 
 const router = createBrowserRouter([
     {
@@ -33,6 +37,11 @@ const router = createBrowserRouter([
                 path: '/:gender/:category/:subcategory?',
                 element: <ProductList />,
                 loader: productListLoader,
+            },
+            {
+                path: '/:gender/:category/:subcategory/:productId',
+                element: <ProductDetails />,
+                loader: productLoader,
             },
         ],
     },

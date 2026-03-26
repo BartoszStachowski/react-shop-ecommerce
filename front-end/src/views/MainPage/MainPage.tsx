@@ -9,7 +9,7 @@ type MainPageLoaderData = {
 };
 
 export const MainPage = () => {
-    const { bestsellers, heroImageUrl } = useLoaderData() as MainPageLoaderData;
+    const { bestsellers, heroImageUrl } = useLoaderData<MainPageLoaderData>();
 
     return (
         <>

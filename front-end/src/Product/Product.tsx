@@ -5,7 +5,10 @@ import HEART_FULL_ICON from '@/assets/heart-full.svg';
 
 export const Product = ({ product }: { product: ProductType }) => {
     return (
-        <Link to="/" className="relative">
+        <Link
+            to={`/${product.gender}/${product.category}/${product.subcategory}/${product.id}`}
+            className="relative"
+        >
             <img
                 className="h-100 w-62.5"
                 src={product.photos[0]}

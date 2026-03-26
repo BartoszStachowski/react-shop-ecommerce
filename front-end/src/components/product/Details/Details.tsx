@@ -4,7 +4,7 @@ import type { ProductType } from '@/types/product.ts';
 import { FullWidthButton } from '@/components/ui/FullWidthButton/FullWidthButton.tsx';
 import { Accordion } from '@/components/ui/Accordion/Accordion.tsx';
 
-export const ProductDetails = ({ product }: { product: ProductType }) => {
+export const Details = ({ product }: { product: ProductType }) => {
     const accordionContent = [
         {
             title: 'Product Description',
