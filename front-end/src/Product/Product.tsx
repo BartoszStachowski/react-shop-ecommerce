@@ -2,6 +2,7 @@ import type { ProductType } from '@/types/product.ts';
 import { Link, useFetcher } from 'react-router-dom';
 import HEART_ICON from '@/assets/heart.svg';
 import HEART_FULL_ICON from '@/assets/heart-full.svg';
+import { Price } from '@/components/product/Price/Price.tsx';
 
 export const Product = ({ product }: { product: ProductType }) => {
     const { Form } = useFetcher();
@@ -17,7 +18,9 @@ export const Product = ({ product }: { product: ProductType }) => {
                 alt="product"
             />
             <h3 className="my-2 font-bold">{product.productName}</h3>
-            <p className="mb-4 text-red-500">{product.pricePLN}zł</p>
+            <p className="mb-4 text-red-500">
+                <Price product={product} />
+            </p>
             <Form
                 method="POST"
                 action={`/add-to-favourites/${product.id}`}

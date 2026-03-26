@@ -3,6 +3,7 @@ import RETURN_ICON from '@/assets/return.svg';
 import type { ProductType } from '@/types/product.ts';
 import { FullWidthButton } from '@/components/ui/FullWidthButton/FullWidthButton.tsx';
 import { Accordion } from '@/components/ui/Accordion/Accordion.tsx';
+import { Price } from '@/components/product/Price/Price.tsx';
 
 export const Details = ({ product }: { product: ProductType }) => {
     const accordionContent = [
@@ -20,7 +21,9 @@ export const Details = ({ product }: { product: ProductType }) => {
         <div className="w-full pr-4">
             <h2>{product.brand}</h2>
             <p className="my-2 font-bold">{product.productName}</p>
-            <p className="mb-8 text-2xl text-red-700">{product.pricePLN}zł</p>
+            <p className="mb-8 text-2xl text-red-700">
+                <Price product={product} />
+            </p>
             <FullWidthButton isBlack={true}>Dodaj do koszyka</FullWidthButton>
 
             <ul className="mt-8">

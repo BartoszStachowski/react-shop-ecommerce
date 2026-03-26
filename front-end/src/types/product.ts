@@ -1,3 +1,5 @@
+import { CURRENCIES } from '@/constants/currencies.ts';
+
 export interface ProductType {
     id: number;
     gender: 'men' | 'women' | 'children';
@@ -17,3 +19,6 @@ export interface FavouriteProductType {
     product: ProductType;
     productId: number;
 }
+
+// values of CURRENCIES
+export type CurrencyType = (typeof CURRENCIES)[keyof typeof CURRENCIES];

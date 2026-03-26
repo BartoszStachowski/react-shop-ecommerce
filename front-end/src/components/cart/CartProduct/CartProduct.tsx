@@ -1,7 +1,10 @@
 import type { ProductType } from '@/types/product.ts';
 import REMOVE_ICON from '@/assets/remove.svg';
+import { Price } from '@/components/product/Price/Price.tsx';
 
 export const CartProduct = ({ product }: { product: ProductType }) => {
+    const price = <Price product={product} />;
+
     return (
         <div className="my-2 flex gap-12 border-t py-4">
             <img
@@ -12,11 +15,11 @@ export const CartProduct = ({ product }: { product: ProductType }) => {
             <div className="flex flex-1 flex-col">
                 <div className="mb-4 flex justify-between text-xl font-bold">
                     <h3>{`${product.brand} ${product.productName}`}</h3>
-                    <p>{product.pricePLN}zł</p>
+                    <p>{price}</p>
                 </div>
                 <p className="font-bold">
                     <span className="font-normal text-gray-500">Cena:</span>
-                    {product.pricePLN}zł
+                    {price}
                 </p>
                 <div className="flex flex-1 items-end gap-8">
                     <button className="flex items-center">
