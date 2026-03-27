@@ -3,6 +3,7 @@ import BAG_ICON from '@/assets/bag.svg';
 import type { FavouriteProductType } from '@/types/product.ts';
 import { useFetcher } from 'react-router-dom';
 import { Price } from '@/components/product/Price/Price.tsx';
+import { useCart } from '@/hooks/context/useCart.ts';
 
 type Props = {
     favourite: FavouriteProductType;
@@ -11,6 +12,7 @@ type Props = {
 export const FavouriteProduct = ({ favourite }: Props) => {
     const product = favourite.product;
     const { Form } = useFetcher();
+    const { addProductToCart } = useCart();
 
     const price = <Price product={product} />;
 
@@ -44,7 +46,10 @@ export const FavouriteProduct = ({ favourite }: Props) => {
                             Usuń
                         </button>
                     </Form>
-                    <button className="flex items-center">
+                    <button
+                        className="flex items-center"
+                        onClick={() => addProductToCart(product)}
+                    >
                         <img
                             src={BAG_ICON}
                             alt="bag icon"

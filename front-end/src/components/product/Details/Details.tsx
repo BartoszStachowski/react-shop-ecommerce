@@ -4,8 +4,11 @@ import type { ProductType } from '@/types/product.ts';
 import { FullWidthButton } from '@/components/ui/FullWidthButton/FullWidthButton.tsx';
 import { Accordion } from '@/components/ui/Accordion/Accordion.tsx';
 import { Price } from '@/components/product/Price/Price.tsx';
+import { useCart } from '@/hooks/context/useCart.ts';
 
 export const Details = ({ product }: { product: ProductType }) => {
+    const { addProductToCart } = useCart();
+
     const accordionContent = [
         {
             title: 'Product Description',
@@ -24,7 +27,12 @@ export const Details = ({ product }: { product: ProductType }) => {
             <p className="mb-8 text-2xl text-red-700">
                 <Price product={product} />
             </p>
-            <FullWidthButton isBlack={true}>Dodaj do koszyka</FullWidthButton>
+            <FullWidthButton
+                isBlack={true}
+                onClick={() => addProductToCart(product)}
+            >
+                Dodaj do koszyka
+            </FullWidthButton>
 
             <ul className="mt-8">
                 <li className="mb-8 flex items-center justify-start gap-4">

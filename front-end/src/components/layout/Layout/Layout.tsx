@@ -10,28 +10,45 @@ import { Outlet } from 'react-router-dom';
 import { CurrencyContext } from '@/contexts/CurrencyContext.ts';
 import { useState } from 'react';
 import { CURRENCIES } from '@/constants/currencies.ts';
-import type { CurrencyType } from '@/types/product.ts';
+import type { CurrencyType, ProductType } from '@/types/product.ts';
+import { CartContext } from '@/contexts/CartContext.ts';
 
 export const Layout = () => {
     const [currency, setCurrency] = useState<CurrencyType>(
         localStorage['selected_currency'] || CURRENCIES.PLN
     );
 
+    const [cartItems, setCartItems] = useState<ProductType[]>(() => {
+        return localStorage['cart_products']
+            ? JSON.parse(localStorage['cart_products'])
+            : [];
+    });
+
+    const addProductToCart = (product: ProductType) => {
+        setCartItems((prevState) => {
+            const newState = [...prevState, product];
+            localStorage['cart_products'] = JSON.stringify(newState);
+            return newState;
+        });
+    };
+
     return (
         <>
             <MainContent>
-                <CurrencyContext.Provider value={{ currency, setCurrency }}>
-                    <TopBar>
-                        <MainMenu />
-                        <Logo />
-                        <div className="flex items-center justify-end">
-                            <CurrencySelector />
-                            <IconMenu />
-                        </div>
-                    </TopBar>
-                    <CategoryMenu />
-                    <Outlet />
-                </CurrencyContext.Provider>
+                <CartContext.Provider value={{ cartItems, addProductToCart }}>
+                    <CurrencyContext.Provider value={{ currency, setCurrency }}>
+                        <TopBar>
+                            <MainMenu />
+                            <Logo />
+                            <div className="flex items-center justify-end">
+                                <CurrencySelector />
+                                <IconMenu />
+                            </div>
+                        </TopBar>
+                        <CategoryMenu />
+                        <Outlet />
+                    </CurrencyContext.Provider>
+                </CartContext.Provider>
             </MainContent>
             <Footer />
         </>
