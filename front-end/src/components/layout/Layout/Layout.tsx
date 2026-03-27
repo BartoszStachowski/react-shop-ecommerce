@@ -8,29 +8,26 @@ import { CategoryMenu } from '@/components/navigation/CategoryMenu/CategoryMenu.
 import { MainContent } from '@/components/layout/MainContent/MainContent.tsx';
 import { Outlet } from 'react-router-dom';
 import { CurrencyContext } from '@/contexts/CurrencyContext.ts';
-import { useState } from 'react';
 import { CURRENCIES } from '@/constants/currencies.ts';
 import type { CurrencyType, ProductType } from '@/types/product.ts';
 import { CartContext } from '@/contexts/CartContext.ts';
+import { useLocalStorage } from '@/hooks/useLocalStorage.ts';
 
 export const Layout = () => {
-    const [currency, setCurrency] = useState<CurrencyType>(
-        localStorage['selected_currency'] || CURRENCIES.PLN
+    const [currency, setCurrency] = useLocalStorage<CurrencyType>(
+        'selected_currency',
+        CURRENCIES.PLN
     );
 
-    const [cartItems, setCartItems] = useState<ProductType[]>(() => {
-        return localStorage['cart_products']
-            ? JSON.parse(localStorage['cart_products'])
-            : [];
-    });
+    const [cartItems, setCartItems] = useLocalStorage<ProductType[]>(
+        'cart_products',
+        []
+    );
 
-    const addProductToCart = (product: ProductType) => {
-        setCartItems((prevState) => {
-            const newState = [...prevState, product];
-            localStorage['cart_products'] = JSON.stringify(newState);
-            return newState;
-        });
-    };
+    function addProductToCart(product: ProductType) {
+        const newState = [...cartItems, product];
+        setCartItems(newState);
+    }
 
     return (
         <>

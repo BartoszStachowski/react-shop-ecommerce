@@ -9,7 +9,6 @@ export const CurrencySelector = () => {
     const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value as CurrencyType;
         setCurrency(value);
-        localStorage['selected_currency'] = value;
     };
 
     return (
